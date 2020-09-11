@@ -1,8 +1,13 @@
-#Collecting all of the data required for analysis
-
+# importing libraries
+import numpy
+import pandas
 from nba_api.stats.static import teams
-team_dict = teams.get_teams()
+from nba_api.statss.endpoints import teamyearbyyearstats
 
+# checking favourite team
+team_dict = teams.get_teams()
 rockets = [team for team in team_dict if team['nickname'] == 'Rockets']
-# def getData():
 print(rockets)
+
+#
+team_threept_stats = teamyearbyyearstats.TeamYearByYearStats()
